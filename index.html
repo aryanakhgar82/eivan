@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz of King — جمعه سیاه</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Quiz of King - نسخهٔ ویژه جمعه سیاه: جمعه‌ای پر از تخفیف و هیجان!">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="logo">Quiz of King</div>
+      <div class="blackfriday">جمعه سیاه — جمعه‌ای پر از تخفیف</div>
+      <nav class="mini-nav">
+        <a href="#" class="nav-item">خانه</a>
+        <a href="#" class="nav-item">درباره</a>
+        <a href="#" class="nav-item">تماس</a>
+      </nav>
+    </div>
+    <div class="hero">
+      <div class="hero-left">
+        <h1>ورود به چالش Quiz of King</h1>
+        <p class="lead">طراحی شده به سبک فروشگاه — تجربه‌ای براق، سریع و بازی‌گونه. به ۵ پاسخ صحیح پشت‌سرهم برسی و تاج را بدست بیار!</p>
+        <div class="hero-cta">
+          <button id="startBtn" class="btn primary">شروع بازی</button>
+          <button id="howBtn" class="btn outline">قوانین بازی</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="card-glass">
+          <div class="card-header">وضعیت بازی</div>
+          <div class="card-body">
+            <div>پاسخ‌های پیاپی صحیح: <span id="streakTop">0</span></div>
+            <div>بازهٔ تایمر: <strong>15</strong> ثانیه</div>
+            <div>سوال‌ها: 2000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="quizApp" aria-live="polite">
+    <section class="quiz-wrap card-glass large">
+      <div class="quiz-top">
+        <div class="q-info">سوال <span id="qIndex">0</span> / <span id="qTotal">0</span></div>
+        <div class="timer" id="timerWrap">
+          <div id="timerBar"></div>
+          <div id="timerText">15</div>
+        </div>
+      </div>
+
+      <div class="question" id="question">برای شروع «شروع بازی» را بزنید</div>
+
+      <div class="choices" id="choices" role="list"></div>
+
+      <div class="controls">
+        <button id="nextBtn" class="btn outline" disabled>سوال بعدی</button>
+        <button id="restartBtn" class="btn ghost">شروع مجدد</button>
+      </div>
+
+      <div class="progress-row">
+        <div class="progress-label">پیشرفت تا ۵ پاسخ پیاپی:</div>
+        <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature card-glass">
+        <h3>ظاهر بازی</h3>
+        <p>طراحی شیشه‌ای، سایه‌های براق و انیمیشن‌های نرم برای حس لوکس و بازی‌گونه.</p>
+      </div>
+      <div class="feature card-glass">
+        <h3>قوانین</h3>
+        <p>۵ پاسخ صحیح پشت‌سرهم = برنده. هر سوال ۱۵ ثانیه، درصورت اتمام زمان سوال به‌عنوان اشتباه محسوب می‌شود.</p>
+      </div>
+      <div class="feature card-glass">
+        <h3>سفارشی‌سازی</h3>
+        <p>قابلیت افزودن سوال‌های واقعی، ذخیره رکورد و تغییر زمان.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© 2025 Quiz of King — طراحی به سبک فروشگاه</div>
+  </footer>
+
+  <!-- Win Modal -->
+  <div id="winModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-inner card-glass">
+      <h2>تبریک! 👑</h2>
+      <p>شما ۵ پاسخ صحیح پشت‌سرهم دادید و برنده شدید.</p>
+      <button id="playAgain" class="btn primary">دوباره بازی کن</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

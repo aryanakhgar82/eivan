@@ -1,0 +1,61 @@
+:root{
+  --bg1: #0b1226;
+  --bg2: #081025;
+  --accent: #ffd166;
+  --accent2: #ff6b6b;
+  --glass: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.03);
+  --muted: rgba(230,238,248,0.6);
+  --glass-border: rgba(255,255,255,0.08);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#e6eef8;direction:rtl}
+.page-bg{position:fixed;inset:0;background:radial-gradient(ellipse at 10% 20%, rgba(255,209,102,0.06), transparent 6%), radial-gradient(ellipse at 90% 80%, rgba(255,107,107,0.04), transparent 8%);pointer-events:none;filter:blur(20px) saturate(120%)}
+.site-header{padding:20px 28px}
+.topbar{display:flex;align-items:center;gap:20px;justify-content:space-between}
+.logo{font-weight:800;font-size:1.2rem;letter-spacing:0.6px}
+.blackfriday{background:linear-gradient(90deg,#ffb86b,#ff6b6b);padding:8px 14px;border-radius:999px;color:#071022;font-weight:800;box-shadow:0 10px 30px rgba(255,107,107,0.12);transform:scale(1);transition:transform .18s}
+.blackfriday:hover{transform:scale(1.03)}
+.mini-nav{display:flex;gap:12px}
+.nav-item{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.hero{display:flex;gap:20px;align-items:center;margin-top:22px}
+.hero-left{flex:1}
+.hero-right{width:300px}
+.hero h1{font-size:2rem;margin:0 0 8px 0;letter-spacing:0.4px}
+.lead{color:var(--muted);margin:8px 0 16px 0}
+.card-glass{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border:1px solid var(--glass-border);padding:16px;border-radius:14px;backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.card-header{font-weight:700;margin-bottom:8px}
+.card-body{color:var(--muted);font-size:0.95rem}
+.hero-cta{display:flex;gap:10px;margin-top:8px}
+.btn{border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#071022;box-shadow:0 10px 30px rgba(255,209,102,0.12)}
+.btn.outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.btn.ghost{background:transparent;color:var(--muted);border:1px dashed rgba(255,255,255,0.04)}
+.main{max-width:1100px;margin:28px auto;padding:0 18px;display:grid;grid-template-columns:1fr;gap:18px}
+.quiz-wrap.large{padding:22px}
+.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.q-info{color:var(--muted)}
+.timer{position:relative;height:44px;flex:1;margin:0 12px;border-radius:10px;background:var(--glass-2);overflow:hidden}
+#timerBar{position:absolute;left:0;top:0;height:100%;width:100%;transform-origin:left;transition:width 0.2s linear;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+#timerText{position:absolute;right:12px;top:8px;color:#071022;background:#fff;padding:6px 10px;border-radius:8px;font-weight:800}
+.question{font-size:1.3rem;min-height:68px;display:flex;align-items:center;margin-bottom:12px}
+.choices{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:14px}
+.choice{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));cursor:pointer;transition:transform .12s ease, box-shadow .12s;display:flex;align-items:center;justify-content:space-between}
+.choice:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+.choice.correct{outline:3px solid rgba(31,138,62,0.12);box-shadow:0 10px 24px rgba(31,138,62,0.08)}
+.choice.wrong{outline:3px solid rgba(201,74,74,0.12);box-shadow:0 10px 24px rgba(201,74,74,0.08)}
+.controls{display:flex;gap:10px;justify-content:flex-end}
+.progress-row{display:flex;align-items:center;gap:12px;margin-top:12px}
+.progress-track{flex:1;height:12px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .25s ease}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.feature{padding:18px}
+.site-footer{text-align:center;color:var(--muted);padding:18px 0;margin-top:24px;border-top:1px solid rgba(255,255,255,0.02)}
+
+/* responsive */
+@media(max-width:900px){
+  .hero{flex-direction:column}
+  .hero-right{width:100%}
+  .features{grid-template-columns:1fr}
+  .choices{grid-template-columns:1fr}
+}
