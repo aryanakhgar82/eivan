@@ -1,0 +1,36 @@
+
+body{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(20px);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.glass{
+    background:rgba(255,255,255,0.2);
+    padding:30px;
+    border-radius:20px;
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    backdrop-filter:blur(40px);
+}
+#timerCircle{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:8px solid red;
+    margin:0 auto 20px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+#timerNumber{
+    font-size:32px;
+    font-weight:bold;
+}
