@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz of King — Super Complete</title>
+  <meta name="description" content="نسخهٔ Super Complete — Quiz of King. طراحی حرفه‌ای، جدول رکورد، افکت صوتی و انیمیشن.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <div class="logo"><span class="crown">👑</span> Quiz of King</div>
+    <div class="bf">جمعه سیاه — جمعه‌ای پر از تخفیف</div>
+    <div class="controls">
+      <button id="soundToggle" class="icon-btn" aria-pressed="false" title="صدا">🔊</button>
+      <button id="fullscreenBtn" class="icon-btn" title="تمام صفحه">⤢</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero card-glass">
+      <div class="hero-left">
+        <h1>چالش Quiz of King — نسخهٔ Super Complete</h1>
+        <p class="lead">۵ پاسخ صحیح پشت‌سرهم برای برد. هر سوال ۱۵ ثانیه. تجربهٔ بازی‌گونه با طراحی فوق حرفه‌ای.</p>
+        <div class="hero-actions">
+          <button id="startBtn" class="btn primary">شروع بازی</button>
+          <button id="howBtn" class="btn outline">قوانین</button>
+        </div>
+        <div class="meta-row">
+          <div>سوال‌ها: <strong id="qTotal">2000</strong></div>
+          <div>بهترین رکورد شما: <strong id="bestStreak">0</strong></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="status card-glass small">
+          <div>پاسخ‌های پیاپی صحیح</div>
+          <div class="streak" id="streakDisplay">0</div>
+          <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+        </div>
+        <div class="glossy-card card-glass">
+          <div class="q-thumb">🏆</div>
+          <div class="q-info">برنده شوید تا تاج را بدست آورید!</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-area card-glass hidden" id="quizArea" aria-live="polite">
+      <div class="quiz-top">
+        <div class="q-index">سوال <span id="qIndex">0</span> / <span id="qTotal2">2000</span></div>
+        <div class="timer-wrap" aria-hidden="true">
+          <div id="timerBar" class="timer-bar"></div>
+          <div id="timerText" class="timer-text">15</div>
+        </div>
+      </div>
+
+      <div id="questionBox" class="question-box">
+        <h2 id="questionText">برای شروع دکمه شروع را بزنید</h2>
+      </div>
+
+      <div id="choices" class="choices" role="list"></div>
+
+      <div class="quiz-controls">
+        <button id="nextBtn" class="btn outline" disabled>سوال بعدی</button>
+        <button id="restartBtn" class="btn ghost">شروع مجدد</button>
+      </div>
+    </section>
+
+    <section class="leaderboard card-glass">
+      <h3>جدول امتیازات (محلی)</h3>
+      <ol id="leaderboardList"></ol>
+    </section>
+  </main>
+
+  <footer class="footer card-glass">
+    <div>© Quiz of King — Super Complete • طراحی شده برای جمعه سیاه</div>
+  </footer>
+
+  <!-- Win Modal -->
+  <div id="winModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+    <div class="modal-content card-glass">
+      <h2 id="winTitle">تبریک! 👑</h2>
+      <p>شما ۵ پاسخ صحیح پشت‌سرهم را بدست آوردید. امتیاز شما ذخیره شد.</p>
+      <div class="modal-actions">
+        <button id="saveScoreBtn" class="btn primary">ذخیره رکورد</button>
+        <button id="playAgain" class="btn outline">دوباره بازی کن</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
